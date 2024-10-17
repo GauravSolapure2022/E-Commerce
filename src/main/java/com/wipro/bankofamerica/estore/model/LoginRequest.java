@@ -1,4 +1,4 @@
-package in.atos.jersey.ecommerce.model;
+package com.wipro.bankofamerica.estore.model;
 
 public class LoginRequest {
 	 

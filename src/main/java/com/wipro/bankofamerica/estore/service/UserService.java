@@ -1,8 +1,9 @@
-package in.atos.jersey.ecommerce.service;
+package com.wipro.bankofamerica.estore.service;
 
 import org.springframework.stereotype.Service;
 
-import in.atos.jersey.ecommerce.model.User;
+import com.wipro.bankofamerica.estore.model.User;
+
 import java.util.List;
 
 @Service
