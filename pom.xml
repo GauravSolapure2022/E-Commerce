@@ -8,11 +8,11 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>in.atos.jersey.ecommerce</groupId>
-	<artifactId>E-commerce1</artifactId>
+	<groupId>com.wipro.bankofamerica.estore</groupId>
+	<artifactId>E-commerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>E-commerce1</name>
+	<name>E-commerce</name>
 	<description>This is the E Commerce System Project Based on Spring Boot</description>
 	<url/>
 	<licenses>
