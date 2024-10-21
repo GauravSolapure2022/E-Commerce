@@ -16,6 +16,7 @@ import com.wipro.bankofamerica.estore.service.UserService;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 //GS
 @RestController
 @RequestMapping("/api/users")
@@ -52,8 +53,8 @@ public class UserController {
 	    }
 
 	    @GetMapping("/{username}")
-	    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
-	        User user = userService.getUserByUserName(username);
+	    public ResponseEntity<Optional<User>> getUserByUsername(@PathVariable String username) {
+	        Optional<User> user = userService.getUserByUserName(username);
 	        return ResponseEntity.ok(user);
 	    }
 
