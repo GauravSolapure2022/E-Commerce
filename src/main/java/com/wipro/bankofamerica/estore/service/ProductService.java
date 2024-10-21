@@ -16,4 +16,6 @@ public interface ProductService {
 
     public void deleteProduct(Long id);
 
+    public Product updateProduct(Long id, Product productDetails);
+
 }
