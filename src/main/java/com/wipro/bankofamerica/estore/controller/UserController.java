@@ -1,4 +1,4 @@
-package in.atos.jersey.ecommerce.controller;
+package com.wipro.bankofamerica.estore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.atos.jersey.ecommerce.model.LoginRequest;
-import in.atos.jersey.ecommerce.model.User;
-import in.atos.jersey.ecommerce.service.UserService;
+import com.wipro.bankofamerica.estore.model.LoginRequest;
+import com.wipro.bankofamerica.estore.model.User;
+import com.wipro.bankofamerica.estore.service.UserService;
 
 import java.util.List;
 import java.util.Map;

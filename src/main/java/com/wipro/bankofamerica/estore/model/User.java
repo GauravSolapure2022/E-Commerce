@@ -1,4 +1,4 @@
-package in.atos.jersey.ecommerce.model;
+package com.wipro.bankofamerica.estore.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +10,7 @@ import lombok.*;
 	@NoArgsConstructor
 	@Builder
 	@ToString
-	@Table(name = "User")
+	@Table(name = "User_Details")
 	public class User {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)

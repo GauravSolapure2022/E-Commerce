@@ -1,8 +1,8 @@
-package in.atos.jersey.ecommerce;
+package com.wipro.bankofamerica.estore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//Shubhangi-31
+
 @SpringBootApplication
 public class ECommerce1Application {
 
