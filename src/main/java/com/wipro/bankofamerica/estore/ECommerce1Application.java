@@ -2,7 +2,7 @@ package com.wipro.bankofamerica.estore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//sumit
+
 @SpringBootApplication
 public class ECommerce1Application {
 
