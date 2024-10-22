@@ -1,11 +1,12 @@
-package in.atos.jersey.ecommerce.serviceImpl;
+package com.wipro.bankofamerica.estore.serviceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import in.atos.jersey.ecommerce.model.User;
-import in.atos.jersey.ecommerce.repository.UserRepository;
-import in.atos.jersey.ecommerce.service.UserService;
+import com.wipro.bankofamerica.estore.model.User;
+import com.wipro.bankofamerica.estore.repository.UserRepository;
+import com.wipro.bankofamerica.estore.service.UserService;
+
 import java.util.List;
 
 @Service
