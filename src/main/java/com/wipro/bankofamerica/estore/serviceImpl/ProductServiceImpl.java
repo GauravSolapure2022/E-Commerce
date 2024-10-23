@@ -45,28 +45,7 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
-//	@Override
-//	@Transactional
-//	public void deleteProduct(Long productId) {
-//	
-//		productRepository.getProductById(productId);
-//		
-//	}
 
-	
-//	@Override
-//	@Transactional
-//	public void deleteProduct(Long productId) {
-//	    Optional<ProductEntity> productEntity = productRepository.findById(productId);
-//	    
-//	    if (productEntity.isPresent()) {
-//	        // If the product exists, delete it
-//	        productRepository.deleteById(productId);
-//	    } else {
-//	        // Handle the case where the product does not exist
-//	        throw new EntityNotFoundException("Product not found with ID: " + productId);
-//	    }
-//	}
 	
 	@Override
 	@Transactional
