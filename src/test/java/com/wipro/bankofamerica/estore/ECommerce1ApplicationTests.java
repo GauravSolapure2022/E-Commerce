@@ -1,4 +1,4 @@
-package in.atos.jersey.ecommerce;
+package com.wipro.bankofamerica.estore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
