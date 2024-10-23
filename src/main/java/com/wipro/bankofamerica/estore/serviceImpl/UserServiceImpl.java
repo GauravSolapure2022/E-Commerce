@@ -4,16 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wipro.bankofamerica.estore.model.User;
+import com.wipro.bankofamerica.estore.repository.ProductRepository;
 import com.wipro.bankofamerica.estore.repository.UserRepository;
 import com.wipro.bankofamerica.estore.service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 	
 	    @Autowired
+	    ProductRepository productRepository;
+	    
 	    private UserRepository userRepo;
 
 
@@ -42,10 +46,19 @@ public class UserServiceImpl implements UserService {
 	    }
 
 	    @Override
-	    public User getUserByUserName(String username) {
+	    public Optional<User> getUserByUserName(String username) {
 	    	
-	        return userRepo.findByUsername(username)
-	                .orElseThrow(() -> new RuntimeException("User not found"));
+//	        return userRepo.findByUsername(username)
+//             .orElseThrow(() -> new RuntimeException("User not found"));
+	    	Optional<User> byUsername = userRepo.findByUsername(username);
+	    	if(byUsername.isPresent())
+	    	{
+	    		return byUsername;
+	    	}
+	    	else {
+	    		new RuntimeException("User Not found");
+	    	}
+			return null;
 	    }
 
 }
