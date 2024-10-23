@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 
-   
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ResponseStructure<String>> handleIllegalArgumentException(IllegalArgumentException ex) {
         ResponseStructure<String> response = new ResponseStructure<>();
@@ -64,15 +64,45 @@ public class GlobalExceptionHandler {
         response.setMessage(ex.getMessage());
         response.setData(null);
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-    } 
-        
+    }
+
         @ExceptionHandler(AuthenticationException.class)
-        public ResponseEntity<String> handleAuthenticationException(AuthenticationException e) 
+        public ResponseEntity<String> handleAuthenticationException(AuthenticationException e)
         {
             return new ResponseEntity<>("Authentication failed: " + e.getMessage(), HttpStatus.UNAUTHORIZED);
         }
 
 
+        // for Employee 
+        
+        @ExceptionHandler(EmployeeNotFoundException.class)
+        public ResponseEntity<ResponseStructure<String>> handleEmployeeNotFoundException(EmployeeNotFoundException ex) {
+            ResponseStructure<String> response = new ResponseStructure<>();
+            response.setStatus(HttpStatus.NOT_FOUND.value());
+            response.setMessage(ex.getMessage());
+            response.setData(null);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
+        
 
-  
+        @ExceptionHandler(EmployeeAlreadyPresentException.class)
+        public ResponseEntity<ResponseStructure<String>> handleEmployeeAlreadyPresentException(EmployeeAlreadyPresentException ex) {
+            ResponseStructure<String> response = new ResponseStructure<>();
+            response.setStatus(HttpStatus.CONFLICT.value());
+            response.setMessage(ex.getMessage());
+            response.setData(null);
+            return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+        }
+        
+        // for address 
+        
+        @ExceptionHandler(AddressNotFoundException.class)
+        public ResponseEntity<ResponseStructure<String>> handleAddressNotFoundException(AddressNotFoundException ex) {
+            ResponseStructure<String> response = new ResponseStructure<>();
+            response.setStatus(HttpStatus.NOT_FOUND.value());
+            response.setMessage(ex.getMessage());
+            response.setData(null);
+            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+        }
+
 }

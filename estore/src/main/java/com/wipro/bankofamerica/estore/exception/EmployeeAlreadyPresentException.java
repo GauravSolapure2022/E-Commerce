@@ -1,23 +1,17 @@
 package com.wipro.bankofamerica.estore.exception;
 
-public class IllegalArgumentException extends RuntimeException
+public class EmployeeAlreadyPresentException  extends RuntimeException
 {
 	private String message;
 
-
-
-	public IllegalArgumentException(String message) {
+	public EmployeeAlreadyPresentException(String message) {
 		super();
 		this.message = message;
 	}
 
-
-
-	@Override
 	public String getMessage() {
 		return message;
 	}
 
-
-
+	
 }

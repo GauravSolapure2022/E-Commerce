@@ -23,19 +23,28 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Data JPA -->
+       
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
-        <!-- Spring Web -->
+	
+		<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+		</dependency>
+		
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>   
+	</dependency>
+       
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Boot DevTools (for development) -->
+       
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
