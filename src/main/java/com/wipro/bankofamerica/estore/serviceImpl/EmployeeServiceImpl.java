@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wipro.bankofamerica.estore.exception.EmployeeAlreadyPresentException;
 import com.wipro.bankofamerica.estore.model.Employee;
 import com.wipro.bankofamerica.estore.repository.EmployeeRepository;
 import com.wipro.bankofamerica.estore.service.EmployeeServiceI;
@@ -17,20 +18,23 @@ public class EmployeeServiceImpl implements EmployeeServiceI {
 
 	@Override
 	public Employee saveEmployee(Employee employee) {
-		Employee save = employeeRepository.save(employee);
-		return save;
+			return employeeRepository.save(employee);
+		
 	}
 
 	@Override
-	public Employee getEmployee(Integer id) {
-		Optional<Employee> byId = employeeRepository.findById(id);
-		 if(!byId.isEmpty()) {
-			Employee employee = byId.get();
-			return employee;
+	public Employee getEmployee(Integer id) 
+	{
+		Optional<Employee> optional = employeeRepository.findById(id);
+		if(optional.isPresent())
+		{
+			return optional.get();
 		}
-		else {
-			throw new RuntimeException("employee id is not found");
+		else
+		{
+			throw new EmployeeAlreadyPresentException(" Employee is already present ");
 		}
+		
 	}
 	
 	
