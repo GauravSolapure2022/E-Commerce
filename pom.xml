@@ -8,7 +8,7 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>in.atos.jersey.ecommerce</groupId>
+	<groupId>com.wipro.bankofamerica.estore</groupId>
 	<artifactId>E-commerce1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
