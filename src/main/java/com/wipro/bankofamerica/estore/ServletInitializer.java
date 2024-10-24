@@ -1,4 +1,4 @@
-package in.atos.jersey.ecommerce;
+package com.wipro.bankofamerica.estore;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
