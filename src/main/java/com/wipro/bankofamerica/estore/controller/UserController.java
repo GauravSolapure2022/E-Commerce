@@ -33,13 +33,13 @@ public class UserController {
 
 	    }
 
-	    @PostMapping
+	    @PostMapping("/save")
 	    public ResponseEntity<User> saveUser(@RequestBody User user) {
 	        User savedUser = userService.saveUser(user);
 	        return ResponseEntity.ok(savedUser);
 	    }
 
-	    @GetMapping
+	    @GetMapping("/all")
 	    public ResponseEntity<List<User>> getAllUsers() {
 	        List<User> user = userService.getAllUser();
 	        return ResponseEntity.ok(user);
