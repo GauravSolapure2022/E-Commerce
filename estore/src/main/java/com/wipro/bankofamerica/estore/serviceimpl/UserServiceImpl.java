@@ -3,6 +3,7 @@ package com.wipro.bankofamerica.estore.serviceimpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.wipro.bankofamerica.estore.exception.InvalidCredentialsException;
@@ -19,22 +20,25 @@ public class UserServiceImpl implements UserService
 	@Autowired
 	private UserRepository userRepository ;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	@Override
 	public User loginUser(String username, String password) 
 	{
 		User user = userRepository.findByUsername(username);
 		
-		if(user == null )
+		if(user == null || passwordEncoder.matches(password, user.getUsername()))
 		{
-			throw new UserNotFoundException("User with username: " + username + " not found.");
+			//throw new UserNotFoundException("User with username: " + username + " not found.");
+		    throw new InvalidCredentialsException("Invalid username or password");
 		}
 		
-		if(!password.equals(user.getPassword()))
-		{
-			throw new InvalidCredentialsException("Invalid username or password");
-		}
-		
+//		if(!password.equals(user.getPassword()))
+//		{
+//			throw new InvalidCredentialsException("Invalid username or password");
+//		}
+//		
 		return user;
 	}
 	

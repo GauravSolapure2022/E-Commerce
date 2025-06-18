@@ -1,5 +1,9 @@
 package com.wipro.bankofamerica.estore.model;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -80,6 +84,5 @@ public class User
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
 	
 }

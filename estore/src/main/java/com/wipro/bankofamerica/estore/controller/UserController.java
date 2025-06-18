@@ -22,7 +22,7 @@ public class UserController {
     public ResponseEntity<ResponseStructure<User>> loginUser(@RequestParam String username, @RequestParam String password) {
         ResponseStructure<User> response = new ResponseStructure<>();
         User user = userService.loginUser(username, password); 
-        response.setStatus(HttpStatus.OK.value());
+        response.setStatus(HttpStatus.CREATED.value());
         response.setMessage("Login successful");
         response.setData(user);
         return ResponseEntity.ok(response);
@@ -32,7 +32,7 @@ public class UserController {
     public ResponseEntity<ResponseStructure<User>> saveUser(@RequestBody User user) {
         User savedUser = userService.saveUser(user); 
         ResponseStructure<User> response = new ResponseStructure<>();
-        response.setStatus(HttpStatus.CREATED.value());
+        response.setStatus(HttpStatus.OK.value());
         response.setMessage("User registered successfully");
         response.setData(savedUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
